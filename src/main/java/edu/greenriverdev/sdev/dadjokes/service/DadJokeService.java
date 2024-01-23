@@ -23,9 +23,10 @@ public class DadJokeService {
      return Collections.unmodifiableList(dadJokes);
     }
 
-    public void addJoke(DadJoke dadJoke)
+    public DadJoke addJoke(DadJoke dadJoke)
     {
-        repository.save(dadJoke);
+       return repository.save(dadJoke);
+
     }
 
     public DadJoke update(int id, String newJoketext)
@@ -38,7 +39,7 @@ public class DadJokeService {
        return repository.save(currentjoke);
     }
 
-    public void delete(int id, String dadJoke)
+    public void delete(int id)
     {
         repository.deleteById(id);
     }
